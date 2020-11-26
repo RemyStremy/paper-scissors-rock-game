@@ -12,14 +12,21 @@ body {
 }
 
 header {
-    margin-top: 20vh;
+    margin-top: 15vh;
     text-align: center;
 }
 
 header h1 {
     font-size: 60px;
-    letter-spacing: 2px;
-    
+    letter-spacing: 2px;   
+}
+
+/* Header underline */
+header h1 span {
+    width: 13em;
+    margin: 15px auto;
+    display: flex;
+    border-bottom: 1px solid #F1B24A;
 }
 
 header h2 {
@@ -29,13 +36,13 @@ header h2 {
 }
 
 main {
-    margin: 5vh;
+    margin: 7vh;
     text-align: center;
 }
 
 main h2 {
     font-size: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 main h3 {
@@ -62,4 +69,8 @@ main h3 {
 
 #game-button:hover {
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.score-container div {
+    display: inline-block;
 }
