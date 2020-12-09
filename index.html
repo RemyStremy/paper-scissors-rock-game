@@ -11,21 +11,21 @@
     <header>
         <!-- The span allows the line under h1 to be modified. -->
         <h1>Paper || Scissors || Rock<span></span></h1>
-        <h2>There's 5 rounds. First to 3 wins!</h2>
+        <h2>First to 3 wins!</h2>
     </header>
     <main>
         <section class="game-section">
             <h2>What will you choose?</h2>
             <div id="game-container">
-                <div id="game-button">
+                <div id="game-button" onclick="playRound('paper')">
                     <img src="icons/hand-paper-solid.svg" alt="hand-paper">
                     <h3>Paper</h3>
                 </div>
-                <div id="game-button">
+                <div id="game-button" onclick="playRound('scissors')">
                     <img src="icons/hand-scissors-solid.svg" alt="hand-scissors">
                     <h3>Scissors</h3>
                 </div>
-                <div id="game-button">
+                <div id="game-button" onclick="playRound('rock')">
                     <img src="icons/hand-rock-solid.svg" alt="hand-rock">
                     <h3>Rock</h3>
                 </div>
@@ -36,18 +36,19 @@
             <h3>Score</h3>
             <div class="score-container">
                 <h4>Player</h4>
-                <div id="score-box">
+                <div id="player-score">
                     0
                 </div>
             </div>
 
             <div class="score-container">
                 <h4>Computer</h4>
-                <div id="score-box">
+                <div id="computer-score">
                     0
                 </div>
             </div>
         </section>
     </main>
+    <script src="main.js"></script>
 </body>
 </html>
