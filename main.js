@@ -42,11 +42,13 @@ function playRound(playerSelection){
 
         if (playerScore >= 3){
             updateResultsDisplay("You beat the system! Congrats!");
+            replayButtonElement.style.display = "inline-block";
+
         } else if (computerScore >= 3){
             updateResultsDisplay("You lost. The computer wins!");
+            replayButtonElement.style.display = "inline-block";
+
         }
-    } else {
-        replayButtonElement.style.display = "inline-block";
     }
     
     updateScoreDisplay();
