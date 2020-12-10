@@ -3,55 +3,75 @@ let computerScore = 0;
 
 const playerScoreBox = document.getElementById('player-score');
 const computerScoreBox = document.getElementById('computer-score');
+const resultsOutputElement = document.getElementById('results-output-display')
+
+console.log(resultsOutputElement)
 // console.log(computerScoreBox) // log score box
 // console.log(document); // see HTML in console
 
 // function that will randomly return 'rock', 'paper' or 'scissors'\
 function computerPlay(){
-    let choices = ["paper", "scissors", "rock"]; // arrays should always be plural because they are a collection of elements
+    let choices = ["PAPER", "SCISSORS", "ROCK"]; // arrays should always be plural because they are a collection of elements
     let randomChoice = choices[Math.floor(Math.random() * choices.length)]; // Math.floor is used to round down. Math.ceiling is used to round up. Math.round is used to round to the nearest.
     return randomChoice;
 }
 
 // function that plays a single round
 function playRound(playerSelection){
-    playerSelection = playerSelection.toLowerCase(); // this is so any capitalisation of 'choices' can be read
+    playerSelection = playerSelection.toUpperCase(); // this is so any capitalisation of 'choices' can be read
     let computerSelection = computerPlay();
 
-    let p = 'paper';
-    let s = 'scissors';
-    let r = 'rock';
+    let p = 'PAPER';
+    let s = 'SCISSORS';
+    let r = 'ROCK';
 
     if (!isGameOver()){
         // return string that declares winner of round
         if ((playerSelection == r && computerSelection == s) || (playerSelection == p && computerSelection == r) || (playerSelection == s && computerSelection == p)) {
-            console.log("You Win! " + playerSelection + " beats " + computerSelection);
+            updateResultsDisplay("You win! " + playerSelection + " beats " + computerSelection + ". +1 point for the Player.");
             playerScore++;   
         } 
         
         else if ((playerSelection == r && computerSelection == p) || (playerSelection == p && computerSelection == s) || (playerSelection == s && computerSelection == r)) {
-            console.log("You Lose! " + computerSelection + " beats " + playerSelection);
+            updateResultsDisplay("You lose! " + computerSelection + " beats " + playerSelection + ". +1 point for the Computer.");
             computerScore++;
         } 
         
         else if ((playerSelection == s && computerSelection == s) || (playerSelection == r && computerSelection == r) || (playerSelection == p && computerSelection == p)) {
-            console.log("It's a draw!");
+            updateResultsDisplay("It's a draw! No one gets a point.");
         } 
         
         else {
-            console.log("Invalid move.");
+            updateResultsDisplay("Invalid move.");
+        }
+
+        if (playerScore >= 3){
+            updateResultsDisplay("You beat the system! Congrats!")
+        } else if (computerScore >= 3){
+            updateResultsDisplay("You lost. The computer wins!")
         }
     }
     
     updateScoreDisplay();
 }
 
-// function which updates score display
+// Updates score display
 function updateScoreDisplay(){
     playerScoreBox.innerHTML = playerScore; // changes the html score by setting it to the score variable
     computerScoreBox.innerHTML = computerScore;
 }
 
+// Prints the results on webpage
+function updateResultsDisplay(text){
+    resultsOutputElement.innerHTML = text;
+}
+
+// Checks if the set game score has been reached
 function isGameOver(){
     return (playerScore >= 3 || computerScore >= 3); // use instead of 'if(){true} else {false}'. 
 }
+
+// Refresh page when 'Play Again' button is pressed
+function refreshPage(){
+    window.location.reload();
+} 

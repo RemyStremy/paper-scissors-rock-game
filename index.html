@@ -17,15 +17,15 @@
         <section class="game-section">
             <h2>What will you choose?</h2>
             <div id="game-container">
-                <div id="game-button" onclick="playRound('paper')">
+                <div id="game-button" onclick="playRound('PAPER')">
                     <img src="icons/hand-paper-solid.svg" alt="hand-paper">
                     <h3>Paper</h3>
                 </div>
-                <div id="game-button" onclick="playRound('scissors')">
+                <div id="game-button" onclick="playRound('SCISSORS')">
                     <img src="icons/hand-scissors-solid.svg" alt="hand-scissors">
                     <h3>Scissors</h3>
                 </div>
-                <div id="game-button" onclick="playRound('rock')">
+                <div id="game-button" onclick="playRound('ROCK')">
                     <img src="icons/hand-rock-solid.svg" alt="hand-rock">
                     <h3>Rock</h3>
                 </div>
@@ -46,6 +46,18 @@
                 <div id="computer-score">
                     0
                 </div>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div id="results-output-container">
+                <h4>Results</h4>
+                <div id="results-output-display">
+                    Who will win?
+                </div>
+            </div>
+            <div class="replay-button" onclick="refreshPage()">
+                <h4>Play again?</h4>
             </div>
         </section>
     </main>

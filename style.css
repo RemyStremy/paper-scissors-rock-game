@@ -12,12 +12,12 @@ body {
 }
 
 header {
-    margin-top: 15vh;
+    margin-top: 7vh;
     text-align: center;
 }
 
 header h1 {
-    font-size: 60px;
+    font-size: 50px;
     letter-spacing: 2px;   
 }
 
@@ -36,17 +36,17 @@ header h2 {
 }
 
 main {
-    margin: 7vh;
+    margin: 3vh;
     text-align: center;
 }
 
 main h2 {
-    font-size: 45px;
+    font-size: 40px;
     padding-bottom: 20px;
 }
 
 main h3 {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #game-button {
@@ -54,7 +54,7 @@ main h3 {
     align-items: center;
     width: 5em;
     margin: 10px 20px;
-    padding: 20px 20px;
+    padding: 15px;
     border-radius: 60px;
     border: 2px solid #F1B24A;
     color: #F1B24A;
@@ -64,7 +64,7 @@ main h3 {
 }
 
 #game-button img {
-    height: 50px;
+    height: 40px;
 }
 
 #game-button:hover {
@@ -72,8 +72,8 @@ main h3 {
 }
 
 .score h3 {
-    margin-top: 30px;
-    font-size: 40px;
+    margin-top: 25px;
+    font-size: 35px;
 }
 
 .score .score-container {
@@ -86,7 +86,35 @@ main h3 {
     width: 6em;
 }
 
-.score h4 {
+.results-section #results-output-container h4, .replay-button h4{
+    font-size: 25px;
     text-decoration: underline;
     text-decoration-color: #F1B24A;
+}
+
+.results-section #results-output-container h4{
+    margin-top: 15px;
+}
+
+.results-section #results-output-display{
+    font-size: 20px;
+}
+
+.results-section .replay-button {
+    display: inline-block;
+    align-items: center;
+    width: 5em;
+    margin: 25px 20px;
+    padding: 15px;
+    border-radius: 60px;
+    border: 2px solid #F1B24A;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #F1B24A;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.results-section .replay-button:hover {
+    background-color:  rgba(255, 255, 255, 0.2);
 }
