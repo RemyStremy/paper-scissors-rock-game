@@ -3,7 +3,8 @@ let computerScore = 0;
 
 const playerScoreBox = document.getElementById('player-score');
 const computerScoreBox = document.getElementById('computer-score');
-const resultsOutputElement = document.getElementById('results-output-display')
+const resultsOutputElement = document.getElementById('results-output-display');
+const replayButtonElement = document.getElementById('replay-button');
 
 console.log(resultsOutputElement)
 // console.log(computerScoreBox) // log score box
@@ -30,26 +31,22 @@ function playRound(playerSelection){
         if ((playerSelection == r && computerSelection == s) || (playerSelection == p && computerSelection == r) || (playerSelection == s && computerSelection == p)) {
             updateResultsDisplay("You win! " + playerSelection + " beats " + computerSelection + ". +1 point for the Player.");
             playerScore++;   
-        } 
-        
-        else if ((playerSelection == r && computerSelection == p) || (playerSelection == p && computerSelection == s) || (playerSelection == s && computerSelection == r)) {
+        } else if ((playerSelection == r && computerSelection == p) || (playerSelection == p && computerSelection == s) || (playerSelection == s && computerSelection == r)) {
             updateResultsDisplay("You lose! " + computerSelection + " beats " + playerSelection + ". +1 point for the Computer.");
             computerScore++;
-        } 
-        
-        else if ((playerSelection == s && computerSelection == s) || (playerSelection == r && computerSelection == r) || (playerSelection == p && computerSelection == p)) {
+        } else if ((playerSelection == s && computerSelection == s) || (playerSelection == r && computerSelection == r) || (playerSelection == p && computerSelection == p)) {
             updateResultsDisplay("It's a draw! No one gets a point.");
-        } 
-        
-        else {
+        } else {
             updateResultsDisplay("Invalid move.");
         }
 
         if (playerScore >= 3){
-            updateResultsDisplay("You beat the system! Congrats!")
+            updateResultsDisplay("You beat the system! Congrats!");
         } else if (computerScore >= 3){
-            updateResultsDisplay("You lost. The computer wins!")
+            updateResultsDisplay("You lost. The computer wins!");
         }
+    } else {
+        replayButtonElement.style.display = "inline-block";
     }
     
     updateScoreDisplay();
