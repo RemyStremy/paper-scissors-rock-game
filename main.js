@@ -6,10 +6,6 @@ const computerScoreBox = document.getElementById('computer-score');
 const resultsOutputElement = document.getElementById('results-output-display');
 const replayButtonElement = document.getElementById('replay-button');
 
-console.log(resultsOutputElement)
-// console.log(computerScoreBox) // log score box
-// console.log(document); // see HTML in console
-
 // function that will randomly return 'rock', 'paper' or 'scissors'\
 function computerPlay(){
     let choices = ["PAPER", "SCISSORS", "ROCK"]; // arrays should always be plural because they are a collection of elements
